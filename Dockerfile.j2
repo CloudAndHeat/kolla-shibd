@@ -9,6 +9,9 @@ LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build
 
 {{ macros.install_packages(shibd_packages | customizable("packages")) }}
 
+# fix log paths
+sed -i 's#/var/log/shibboleth#/var/log/kolla#' /etc/shibboleth/shibd.logger /etc/shibboleth/native.logger /etc/shibboleth/console.logger /etc/shibboleth/syslog.logger
+
 {% block shibd_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 
