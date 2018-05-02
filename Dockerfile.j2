@@ -5,6 +5,8 @@ LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build
 
 {% import "macros.j2" as macros with context %}
 
+{{ macros.configure_user("shibboleth") }}
+
 {% set shibd_packages = ["shibboleth-sp2-utils"] %}
 
 {{ macros.install_packages(shibd_packages | customizable("packages")) }}
