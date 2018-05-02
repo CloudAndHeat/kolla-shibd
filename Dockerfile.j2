@@ -12,3 +12,4 @@ LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build
 {% block shibd_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 
+CMD ["shibd", "-fc", "/etc/shibboleth/shibboleth2.xml"]
