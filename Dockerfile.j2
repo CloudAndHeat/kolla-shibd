@@ -12,4 +12,5 @@ LABEL maintainer="{{ maintainer }}" name="{{ image_name }}" build-date="{{ build
 {% block shibd_footer %}{% endblock %}
 {% block footer %}{% endblock %}
 
-CMD ["bash", "-c", "shibd -t && shibd -fc /etc/shibboleth/shibboleth2.xml"]
+ADD start.sh /usr/local/bin/kolla_start
+# CMD ["bash", "-c", "shibd -t && shibd -fc /etc/shibboleth/shibboleth2.xml"]
